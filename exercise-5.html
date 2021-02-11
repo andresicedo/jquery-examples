@@ -8,19 +8,62 @@
     /*
     Make it so that when you click on one of the links on this page,
     instead of navigating the browser to that page, it renders that
-    page in the iframe below. Set the iframe's `src` attribute to a URL will cause it to render the page.
+    page in the iframe below. Set the iframe's `src` attribute to a 
+    URL will cause it to render the page.
     HINT: Lookup .attr()
     */
     $(function() {
-      // Write code here
+      //create a variable for each link and iframe
+      const $helloHappy = $("#hello_happy");
+      const $duck_duck_go = $("#duck_duck_go");
+      const $css_tricks = $("#css_tricks");
+      const $iFrame = $("#iframe");
+
+      // //create a click function for helloHappy link to populate the iframe src with link url
+      // $helloHappy.click((e) => {
+      //   //prevent the screen from refreshing when clicked
+      //   e.preventDefault();
+      //   //create a url variable for helloHappy link
+      //   const url = $helloHappy.attr('href');
+      //   //assign the src of iframe to the url of helloHappy link
+      //   $iFrame.attr('src', url);
+      // })
+
+      // //create a click function for duck_duck_go link to populate the iframe src with link url
+      // $duck_duck_go.click((e) => {
+      //   //prevent the screen from refreshing when clicked
+      //   e.preventDefault();
+      //   //create a url variable for duck_duck_go link
+      //   const url = $duck_duck_go.attr('href');
+      //   //assign the src of iframe to the url of duck_duck_go link
+      //   $iFrame.attr('src', url);
+      // })
+
+      // //create a click function for css_tricks link to populate the iframe src with link url
+      // $css_tricks.click((e) => {
+      //   //prevent the screen from refreshing when clicked
+      //   e.preventDefault();
+      //   //create a url variable for css_tricks link
+      //   const url = $css_tricks.attr('href');
+      //   //assign the src of iframe to the url of css_tricks link
+      //   $iFrame.attr('src', url);
+      // })
+      $("a").on("click", function (e) {
+        //prevent the screen from refreshing when clicked
+        e.preventDefault();
+        //create a url variable for css_tricks link
+        const url = $(this).attr('href');
+        //assign the src of iframe to the url of css_tricks link
+        $iFrame.attr('src', url);
+      })
     });
     </script>
   </head>
   <body>
     <ul>
-      <li><a href="http://hellohappy.org">Hello Happy</a></li>
-      <li><a href="http://duckduckgo.com">DuckDuckGo</a></li>
-      <li><a href="http://css-tricks.com">CSS Tricks</a></li>
+      <li><a id="hello_happy" href="http://hellohappy.org">Hello Happy</a></li>
+      <li><a id="duck_duck_go" href="http://duckduckgo.com">DuckDuckGo</a></li>
+      <li><a id="css_tricks" href="http://css-tricks.com">CSS Tricks</a></li>
     </ul>
     <iframe id="iframe" src="http://hellohappy.org" width="800" height="480"></iframe>
   </body>

@@ -6,8 +6,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
     /*
-    When the button is clicked, change the text of the paragraph #the-message to "You clicked me!", and the text of the button #the-button to "Click again?".
+    When the button is clicked, change the text of the paragraph #the-message 
+    to "You clicked me!", and the text of the button #the-button to "Click again?".
     */
+    $(document).ready(function () {
+      //create a click listener for the button
+      $("#the-button").click(() => {
+        //update the message text
+        $("#the-message").text("You clickd me!")
+        //update the button text
+        $("#the-button").text("Click again?")
+      })
+    });
     </script>
   </head>
   <body>
